@@ -1,3 +1,5 @@
+import com.fasterxml.jackson.databind.JsonSerializable;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -11,26 +13,44 @@ public class Main {
 
     public Main() throws Exception {
         this.runCSV();
+        this.runJSON();
+        this.runProto();
+        this.runAvro();
     }
 
     public void runCSV() throws Exception {
-        URL csvFolder = Main.class.getClassLoader().getResource("csv");
-        File[] files = new File(csvFolder.getPath()).listFiles();
+        CSV csv = new CSV();
+        csv.run();
+        System.out.println("==| CSV |==");
+        System.out.println(String.format("Data Size: %s bytes", csv.getDataSize()));
+        System.out.println(String.format("Encode Time: %s ms", csv.getEncodeTime()/1000000));
+        System.out.println(String.format("Parse Time: %s ms", csv.getParseTime()/1000000));
+    }
 
-        double averageTime = Arrays.asList(files)
-            .stream()
-            .mapToInt((file) -> {
-                try {
-                    return Math.toIntExact(CSV.run(file));
-                } catch(Exception e) {
-                    e.printStackTrace();
-                    System.exit(1);
-                }
-                return 0;
-            })
-            .average()
-            .getAsDouble();
+    public void runJSON() throws Exception {
+        JSON json = new JSON();
+        json.run();
+        System.out.println("==| JSON |==");
+        System.out.println(String.format("Data Size: %s bytes", json.getDataSize()));
+        System.out.println(String.format("Encode Time: %s ms", json.getEncodeTime()/1000000));
+        System.out.println(String.format("Parse Time: %s ms", json.getParseTime()/1000000));
+    }
 
-        System.out.println("CSV: Average time: " + averageTime);
+    public void runProto() throws Exception {
+        ProtoBuf proto = new ProtoBuf();
+        proto.run();
+        System.out.println("==| ProtoBuf |==");
+        System.out.println(String.format("Data Size: %s bytes", proto.getDataSize()));
+        System.out.println(String.format("Encode Time: %s ms", proto.getEncodeTime()/1000000));
+        System.out.println(String.format("Parse Time: %s ms", proto.getParseTime()/1000000));
+    }
+
+    public void runAvro() throws Exception {
+        Avro avro = new Avro();
+        avro.run();
+        System.out.println("==| Avro |==");
+        System.out.println(String.format("Data Size: %s bytes", avro.getDataSize()));
+        System.out.println(String.format("Encode Time: %s ms", avro.getEncodeTime()/1000000));
+        System.out.println(String.format("Parse Time: %s ms", avro.getParseTime()/1000000));
     }
 }

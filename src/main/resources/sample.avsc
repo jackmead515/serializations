@@ -1,0 +1,23 @@
+{
+    "namespace": "",
+    "name": "AvroSample",
+    "type": "record",
+    "fields": [
+        {
+            "name": "name",
+            "type": {
+                "name": "nameType",
+                "type": "array",
+                "items": "string"
+            }
+        },
+        {
+            "name": "number",
+            "type": {
+                "name": "numberType",
+                "type": "array",
+                "items": "int"
+            }
+        }
+    ]
+}
