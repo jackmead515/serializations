@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 public class CSV {
@@ -87,6 +88,10 @@ public class CSV {
         this.generate();
         this.testParse();
         this.testEncode();
+    }
+
+    public int base64Size() {
+        return Base64.getEncoder().encode(this.data.toString().getBytes(StandardCharsets.UTF_8)).length;
     }
 
     public int getDataSize() {

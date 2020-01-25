@@ -23,6 +23,7 @@ public class Main {
         csv.run();
         System.out.println("==| CSV |==");
         System.out.println(String.format("Data Size: %s bytes", csv.getDataSize()));
+        System.out.println(String.format("Base64 Size: %s bytes", csv.base64Size()));
         System.out.println(String.format("Encode Time: %s ms", csv.getEncodeTime()/1000000));
         System.out.println(String.format("Parse Time: %s ms", csv.getParseTime()/1000000));
     }
@@ -32,6 +33,7 @@ public class Main {
         json.run();
         System.out.println("==| JSON |==");
         System.out.println(String.format("Data Size: %s bytes", json.getDataSize()));
+        System.out.println(String.format("Base64 Size: %s bytes", json.base64Size()));
         System.out.println(String.format("Encode Time: %s ms", json.getEncodeTime()/1000000));
         System.out.println(String.format("Parse Time: %s ms", json.getParseTime()/1000000));
     }
@@ -41,6 +43,7 @@ public class Main {
         proto.run();
         System.out.println("==| ProtoBuf |==");
         System.out.println(String.format("Data Size: %s bytes", proto.getDataSize()));
+        System.out.println(String.format("Base64 Size: %s bytes", proto.base64Size()));
         System.out.println(String.format("Encode Time: %s ms", proto.getEncodeTime()/1000000));
         System.out.println(String.format("Parse Time: %s ms", proto.getParseTime()/1000000));
     }
@@ -50,6 +53,7 @@ public class Main {
         avro.run();
         System.out.println("==| Avro |==");
         System.out.println(String.format("Data Size: %s bytes", avro.getDataSize()));
+        System.out.println(String.format("Base64 Size: %s bytes", avro.base64Size()));
         System.out.println(String.format("Encode Time: %s ms", avro.getEncodeTime()/1000000));
         System.out.println(String.format("Parse Time: %s ms", avro.getParseTime()/1000000));
     }

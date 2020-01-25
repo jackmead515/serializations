@@ -1,16 +1,7 @@
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVPrinter;
-import org.apache.commons.csv.CSVRecord;
-
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Base64;
 
 public class ProtoBuf {
 
@@ -88,6 +79,10 @@ public class ProtoBuf {
         this.generate();
         this.testParse();
         this.testEncode();
+    }
+
+    public int base64Size() {
+        return Base64.getEncoder().encode(this.data).length;
     }
 
     public int getDataSize() {

@@ -16,6 +16,7 @@ import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 public class Avro {
@@ -97,6 +98,10 @@ public class Avro {
         this.generate();
         this.testParse();
         this.testEncode();
+    }
+
+    public int base64Size() {
+        return Base64.getEncoder().encode(this.data.array()).length;
     }
 
     public int getDataSize() {

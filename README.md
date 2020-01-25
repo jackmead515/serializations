@@ -81,22 +81,26 @@ arrays (etc.)
 
 ```
 ==| CSV |==
-Data Size: 1023710 bytes
-Encode Time: 4.879876862 ms
-Parse Time: 9.543378935 ms
+Data Size: 1024302 bytes
+Base64 Size: 1365736 bytes
+Encode Time: 4.538122835 ms
+Parse Time: 9.893573074999999 ms
 
 ==| JSON |==
-Data Size: 1269098 bytes
-Encode Time: 8.976278148 ms
-Parse Time: 8.237374565 ms
+Data Size: 1268814 bytes
+Base64 Size: 1691752 bytes
+Encode Time: 8.921927827 ms
+Parse Time: 8.213622645 ms
 
 ==| ProtoBuf |==
-Data Size: 936439 bytes
-Encode Time: 5.405772303999999 ms
-Parse Time: 1.241801479 ms
+Data Size: 936944 bytes
+Base64 Size: 1249260 bytes
+Encode Time: 5.467107863 ms
+Parse Time: 1.2513737409999999 ms
 
 ==| Avro |==
-Data Size: 845889 bytes
-Encode Time: 4.3906428669999995 ms
-Parse Time: 2.517884399 ms
+Data Size: 847351 bytes
+Base64 Size: 1129804 bytes
+Encode Time: 4.372638659 ms
+Parse Time: 2.6514886630000003 ms
 ```

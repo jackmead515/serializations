@@ -1,13 +1,9 @@
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVPrinter;
-import org.apache.commons.csv.CSVRecord;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Base64;
 
 public class JSON {
 
@@ -87,6 +83,9 @@ public class JSON {
         this.testEncode();
     }
 
+    public int base64Size() {
+        return Base64.getEncoder().encode(this.data.toString().getBytes(StandardCharsets.UTF_8)).length;
+    }
 
     public int getDataSize() {
         return this.data.toString().getBytes().length;
